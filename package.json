@@ -7,7 +7,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "webpack",
-    "deploy": "npm run build && npm run upload",
+    "deploy": "yarn build && yarn upload",
     "lint": "eslint --ext .js --fix .",
     "upload": "clasp push",
     "watch": "webpack --watch"
