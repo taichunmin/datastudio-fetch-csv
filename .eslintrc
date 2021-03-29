@@ -1,12 +1,40 @@
 {
   "root": true,
-  "extends": ["labnol"],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "googleappsscript/googleappsscript": true
+  },
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
+  },
+  "extends": [
+    "standard"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "googleappsscript"
+  ],
   "rules": {
-    "prettier/prettier": [
+    "no-return-await": 0,
+    "comma-dangle": [
       "error",
       {
-        "printWidth": 80,
-        "singleQuote": true
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "only-multiline"
       }
     ]
   },

@@ -1,25 +1,22 @@
 {
-  "name": "apps-script-starter",
-  "version": "8.0.0",
-  "description": "Setup a local development environment for Google Apps Script with Visual Studio Code",
-  "author": "Amit Agarwal <amit@labnol.org> (https://www.labnol.org)",
-  "homepage": "https://digitalinspiration.com/",
+  "author": "taichunmin <taichunmin@gmail.com>",
+  "description": "A CSV Datastudio Connector",
   "license": "MIT",
+  "name": "datastudio-connector-csv",
+  "repository": "git@github.com:taichunmin/datastudio-connector-csv.git",
+  "version": "1.0.0",
   "scripts": {
-    "watch": "webpack --watch",
     "build": "webpack",
+    "deploy": "npm run build && npm run upload",
+    "lint": "eslint --ext .js --fix .",
     "upload": "clasp push",
-    "deploy": "npm run build && npm run upload"
+    "watch": "webpack --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/labnol/apps-script-starter.git"
+  "dependencies": {
+    "json5": "^2.2.0",
+    "lodash": "^4.17.21",
+    "papaparse": "^5.3.0"
   },
-  "keywords": [
-    "google-apps-script",
-    "google-workspace"
-  ],
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
@@ -29,19 +26,16 @@
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^8.0.0",
     "cross-env": "^7.0.3",
-    "eslint": "^7.22.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-labnol": "^1.0.11",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-webpack-plugin": "^2.5.2",
+    "eslint": "^7.23.0",
+    "eslint-config-standard": "^16.0.2",
     "eslint-plugin-googleappsscript": "^1.0.3",
-    "eslint-plugin-html": "^6.1.2",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-webpack-plugin": "^2.5.2",
     "gas-webpack-plugin": "^2.0.0",
     "prettier": "^2.2.1",
+    "qs": "^6.10.1",
     "webpack": "^5.27.0",
     "webpack-cli": "^4.5.0"
   },

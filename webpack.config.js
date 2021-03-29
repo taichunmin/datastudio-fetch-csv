@@ -7,22 +7,23 @@
  * https://github.com/labnol/apps-script-starter
  */
 
-const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const GasPlugin = require('gas-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
+const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const GasPlugin = require('gas-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 const getSrcPath = (filePath) => {
-  const src = path.resolve(__dirname, 'src');
-  return path.posix.join(src.replace(/\\/g, '/'), filePath);
-};
+  const src = path.resolve(__dirname, 'src')
+  return path.posix.join(src.replace(/\\/g, '/'), filePath)
+}
 
 module.exports = {
-  mode: 'production',
+  // mode: 'production',
+  mode: 'none',
   context: __dirname,
   entry: getSrcPath('/index.js'),
   output: {
-    filename: `[contenthash].js`,
+    filename: '[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
@@ -74,4 +75,4 @@ module.exports = {
       source: 'digitalinspiration.com',
     }),
   ],
-};
+}
