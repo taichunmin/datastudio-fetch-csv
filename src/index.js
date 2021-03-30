@@ -5,6 +5,8 @@ import Papa from 'papaparse'
 const cc = DataStudioApp.createCommunityConnector()
 const types = cc.FieldType
 const aggregations = cc.AggregationType
+const validTypes = _.pullAll(_.keys(types), ['toString', 'name', 'toJSON', 'ordinal', 'compareTo'])
+const validAggregations = _.pullAll(_.keys(aggregations), ['toString', 'name', 'toJSON', 'ordinal', 'compareTo'])
 
 const ADMIN_EMAILS = [
   'taichunmin@gmail.com',
@@ -13,7 +15,7 @@ const ADMIN_EMAILS = [
 
 function showUserError (err) {
   cc.newUserError()
-    .setDebugText(JSON.stringify(err.data))
+    .setDebugText(JSON.stringify(_.get(err, 'data', {})))
     .setText(err.message)
     .throwException()
 }
@@ -42,10 +44,10 @@ function joiSchema (value) {
   })
   // includes
   _.each([
-    [_.keys(types), 'type'],
-    [_.keys(aggregations), 'aggregation'],
+    [validTypes, 'type'],
+    [validAggregations, 'aggregation'],
   ], ([collection, k]) => {
-    if (!_.isNil(value[k]) && !_.includes(collection, value[k])) throw new TypeError(`schema.${k} must be one of ${collection.join()}`)
+    if (!_.isNil(value[k]) && !_.includes(collection, value[k])) throw new TypeError(`schema.${k} must be one of ${_.join(collection, ', ')}`)
   })
   return value
 }
