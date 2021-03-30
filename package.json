@@ -8,6 +8,7 @@
   "scripts": {
     "build": "webpack",
     "deploy": "yarn build && yarn upload",
+    "prod": "yarn build && clasp deploy --deploymentId AKfycbzrG_59bHe2VWNW6yGrp-xuCUnN4y3ZPDWSMWllYVYigeux_bQqGpDP7eYElDeqhrQvrQ",
     "lint": "eslint --ext .js --fix .",
     "upload": "clasp push",
     "watch": "webpack --watch"
