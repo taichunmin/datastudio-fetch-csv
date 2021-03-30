@@ -7,10 +7,10 @@
  * https://github.com/labnol/apps-script-starter
  */
 
-const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const GasPlugin = require('gas-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
+const GasPlugin = require('gas-webpack-plugin')
+const path = require('path')
 
 const getSrcPath = (filePath) => {
   const src = path.resolve(__dirname, 'src')

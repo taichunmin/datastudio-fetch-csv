@@ -1,22 +1,18 @@
 {
-  "timeZone": "Asia/Taipei",
-  "runtimeVersion": "V8",
-  "dependencies": {
-    "enabledAdvancedServices": [],
-    "libraries": []
-  },
   "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "timeZone": "Asia/Taipei",
   "dataStudio": {
-    "name": "CSV (@taichunmin)",
-    "logoUrl": "https://i.imgur.com/PCdLrMw.png",
+    "addonUrl": "https://github.com/taichunmin/datastudio-fetch-csv",
     "company": "taichunmin",
     "companyUrl": "https://github.com/taichunmin",
-    "addonUrl": "https://github.com/taichunmin/datastudio-connector-csv",
-    "supportUrl": "https://github.com/taichunmin/datastudio-connector-csv/issues",
-    "description": "Get external csv data from url",
-    "sources": ["url"]
+    "description": "這個連接器允許使用者從 CSV 檔案抓取資料，並且自訂欄位的類型。",
+    "logoUrl": "https://i.imgur.com/PCdLrMw.png",
+    "name": "Fetch CSV (@taichunmin)",
+    "shortDescription": "從 CSV 檔案抓取資料",
+    "supportUrl": "https://github.com/taichunmin/datastudio-fetch-csv/issues",
+    "authType": ["NONE"],
+    "feeType": ["FREE"]
   },
-  "oauthScopes": [
-    "https://www.googleapis.com/auth/script.external_request"
-  ]
+  "dependencies": {}
 }
